@@ -7,8 +7,6 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from predict_function import predict
 
-
-
 data = pd.read_csv("Housing_Price_Index_Pacific_Division_-_Sheet1.csv")                    #Reads the data from the csv file I downloaded from the website
 
 
@@ -24,6 +22,7 @@ scaler_poly = StandardScaler()                                                  
 X_train_scaled = scaler_poly.fit_transform(X_train)
 X_cv_scaled = scaler_poly.transform(X_cv)
 X_test_scaled = scaler_poly.transform(X_test)
+
 
 print(f"The computed mean of the training set is: {scaler_poly.mean_.squeeze()}")
 print(f"The computed standard deviation of the training set is {scaler_poly.scale_.squeeze()}\n")
